@@ -146,3 +146,6 @@ HEADERS += model.h \
 
 FORMS += \
     principal.ui
+
+DISTFILES += \
+    README.md
