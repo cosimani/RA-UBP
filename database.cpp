@@ -119,3 +119,24 @@ QVector<QStringList> Database::readVinculos()
 
     return results;
 }
+
+bool Database::desvincularTodo()
+{
+    if( this->connectDatabase() )
+    {
+        QSqlQuery query( database );
+
+        QString queryString( "DELETE FROM vinculos" );
+
+        bool ok = query.exec( queryString );
+
+        qDebug() << "metodo saveVinculo()" << query.lastError() << query.lastQuery();
+
+        this->disconnectDatabase();
+        return ok;
+    }
+    else
+    {
+        return false;
+    }
+}

@@ -23,6 +23,7 @@ private:
 private slots:
     void slot_cbCamarasChanged(int nuevoIndex);
     void slot_vincular();
+    void slot_desvincularTodo();
 
 signals:
     void signal_vincular( int, QString, QString );

@@ -3,6 +3,7 @@
 #include <QKeyEvent>
 #include <QCameraInfo>
 #include <QMessageBox>
+#include "database.hpp"
 
 Principal::Principal(QWidget *parent) :
     QWidget(parent),
@@ -22,6 +23,7 @@ Principal::Principal(QWidget *parent) :
     connect(ui->cbCamaras, SIGNAL(currentIndexChanged(int)), this, SLOT(slot_cbCamarasChanged(int)));
 
     connect(ui->pbVincular, SIGNAL(clicked(bool)), this, SLOT(slot_vincular()));
+    connect(ui->pbDesvincular, SIGNAL(pressed()), this, SLOT(slot_desvincularTodo()));
     connect(this, SIGNAL(signal_vincular(int,QString,QString)), ui->scene, SLOT(slot_vincular(int,QString,QString)));
 
     this->cargarCamaras();
@@ -58,7 +60,7 @@ void Principal::cargarCamaras()
     }
 
     if ( cameras.size() == 0 )  {
-        QMessageBox::critical(this, "No se detectan cámaras", "Controle que las cámaras estén configuradas.");
+        QMessageBox::critical(this, "No se detectan camaras", "Controle que las camaras esten configuradas.");
         this->close();
     }
 }
@@ -85,6 +87,11 @@ void Principal::slot_vincular()
     ui->scene->setFocus();
     ui->scene->actualizarTexturas();
     ui->cbModelos->setCurrentIndex(0);
+}
+
+void Principal::slot_desvincularTodo()
+{
+    Database::getInstance()->desvincularTodo();
 }
 
 

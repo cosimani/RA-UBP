@@ -31,6 +31,8 @@ public:
 
     bool saveVinculo(int marker_id, QString recurso , QString formatoCaja = "n");
     QVector<QStringList> readVinculos();
+
+    bool desvincularTodo();
 };
 
 #endif // DATABASE_HPP

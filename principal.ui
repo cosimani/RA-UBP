@@ -14,15 +14,103 @@
    <string>Realidad Aumentada - UBP</string>
   </property>
   <layout class="QGridLayout" name="principalLayout">
-   <item row="0" column="0" rowspan="5" colspan="2">
-    <widget class="Scene" name="scene" native="true">
+   <item row="0" column="3" colspan="2">
+    <widget class="Logo" name="appLogo" native="true"/>
+   </item>
+   <item row="4" column="3" colspan="2">
+    <widget class="QComboBox" name="cbCamaras"/>
+   </item>
+   <item row="3" column="3" colspan="2">
+    <widget class="QTextEdit" name="teMessages">
      <property name="focusPolicy">
-      <enum>Qt::StrongFocus</enum>
+      <enum>Qt::NoFocus</enum>
      </property>
     </widget>
    </item>
-   <item row="0" column="3" colspan="2">
-    <widget class="Logo" name="appLogo" native="true"/>
+   <item row="2" column="3" colspan="2">
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Selección de marcadores</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="2" column="0" colspan="2">
+       <widget class="QCheckBox" name="cbFormatoCaja">
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="text">
+         <string>En formato de caja 3D</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QPushButton" name="pbVincular">
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="text">
+         <string>Vincular</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Id del marcador</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="leMarcadorId">
+        <property name="focusPolicy">
+         <enum>Qt::ClickFocus</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="2">
+       <widget class="MiQLineEdit" name="leRecurso">
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="placeholderText">
+         <string>Elegir recurso (png o mp4)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="2">
+       <widget class="QComboBox" name="cbModelos">
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <item>
+         <property name="text">
+          <string>Diseño propio</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Casa</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Hombre</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Oil</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Iphone</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </item>
    <item row="1" column="3" colspan="2">
     <widget class="QGroupBox" name="markersGroup">
@@ -121,100 +209,19 @@
      </layout>
     </widget>
    </item>
-   <item row="2" column="3" colspan="2">
-    <widget class="QGroupBox" name="groupBox">
-     <property name="title">
-      <string>Selección de marcadores</string>
+   <item row="5" column="3">
+    <widget class="QPushButton" name="pbDesvincular">
+     <property name="text">
+      <string>Desvincular Todo</string>
      </property>
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="2" column="0" colspan="2">
-       <widget class="QCheckBox" name="cbFormatoCaja">
-        <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
-        </property>
-        <property name="text">
-         <string>En formato de caja 3D</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="1">
-       <widget class="QPushButton" name="pbVincular">
-        <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
-        </property>
-        <property name="text">
-         <string>Vincular</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>Id del marcador</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QLineEdit" name="leMarcadorId">
-        <property name="focusPolicy">
-         <enum>Qt::ClickFocus</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0" colspan="2">
-       <widget class="MiQLineEdit" name="leRecurso">
-        <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
-        </property>
-        <property name="placeholderText">
-         <string>Elegir recurso (png o mp4)</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0" colspan="2">
-       <widget class="QComboBox" name="cbModelos">
-        <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
-        </property>
-        <item>
-         <property name="text">
-          <string>Diseño propio</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Casa</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Hombre</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Oil</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Iphone</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-     </layout>
     </widget>
    </item>
-   <item row="3" column="3" colspan="2">
-    <widget class="QTextEdit" name="teMessages">
+   <item row="0" column="0" rowspan="6" colspan="2">
+    <widget class="Scene" name="scene" native="true">
      <property name="focusPolicy">
-      <enum>Qt::NoFocus</enum>
+      <enum>Qt::StrongFocus</enum>
      </property>
     </widget>
-   </item>
-   <item row="4" column="3" colspan="2">
-    <widget class="QComboBox" name="cbCamaras"/>
    </item>
   </layout>
  </widget>
